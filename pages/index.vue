@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-800 w-full min-h-screen">
-    <div class="pb-20 pt-24 px-4 flex flex-col justify-center items-center">
+    <div class="pb-20 pt-24 px-6 flex flex-col justify-center items-center">
       <div class="md:flex md:items-center md:justify-between">
         <div
           class="flex justify-center logo md:w-auto order-first md:order-last"
@@ -89,13 +89,13 @@ export default {
 
     var tl = gsap.timeline();
     tl.from(".logo", {
-      duration: 2,
+      duration: .1,
       opacity: 0,
       y: "-100%",
       ease: "bounce",
     })
       .from(".title", {
-        duration: 1.5,
+        duration: 1.3,
         opacity: 0,
         x: "-100%",
         scale: 0.3,

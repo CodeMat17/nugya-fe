@@ -103,13 +103,10 @@
                 alt="logo"
                 class="w-32 h-32"
               />
-              <div>
                 <p class="text-gray-800 text-center">
                   We have received your e-mail and will surely reply if
-                  necessary.
+                  necessary. Thank you !
                 </p>
-                <p class="mt-4 text-gray-800 text-center">Thank you !</p>
-              </div>
             </div>
           </div>
           <button
@@ -135,7 +132,6 @@ export default {
     return {
       title: "ContactUs",
       meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: "description",
           name: "description",
@@ -161,10 +157,10 @@ export default {
       (this.error = ""), (this.sending = true);
       try {
         emailjs.sendForm(
-          process.env.SERVICE_ID,
-          process.env.TEMPLATE_ID,
+          "service_hlm5rqe",
+          "template_chyx61q",
           e.target,
-          process.env.USER_ID
+          "user_Lqc92fwzUsqXMbBCdkSmP",
         );
         (this.name = ""),
           (this.email = ""),
