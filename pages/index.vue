@@ -89,7 +89,7 @@ export default {
 
     var tl = gsap.timeline();
     tl.from(".logo", {
-      duration: .1,
+      duration: 1,
       opacity: 0,
       y: "-100%",
       ease: "bounce",

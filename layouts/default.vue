@@ -3,7 +3,7 @@
     <div>
       <div
         v-if="$nuxt.isOffline"
-        class="sticky top-0 flex w-full p-3 tracking-wide bg-red-100 text-red-500"
+        class="sticky top-0 flex items-center justify-center w-full p-3 tracking-wide bg-red-100 text-red-500"
       >
         <h1 class="text-center">
           Your internet network is off or very poor at the moment. Trying

@@ -93,7 +93,8 @@ export default {
   mounted() {
     gsap.from(".ld", {
       duration: 1.5,
-      y: 50,
+      opacity: 0,
+      y: 30,
       ease: "back",
       stagger: 0.25,
       repeat: -1,
