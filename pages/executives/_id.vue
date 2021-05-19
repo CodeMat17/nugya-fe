@@ -14,15 +14,15 @@
         v-else-if="$apollo.queries.executive.loading"
         class="py-12 px-4 flex flex-col justify-center"
       >
-      <h1 class="text-center py-4">loading</h1>
-      <div class="flex items-center justify-center  space-x-4">
-      <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-        <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-        <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-        <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
+        <div class="flex items-center justify-center space-x-4">
+          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
+          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
+          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
+          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
+        </div>
       </div>
-      </div>
-      <div class="mt-8 bg-white rounded-lg overflow-hidden shadow-xl">
+
+      <div v-else class="mt-8 bg-white rounded-lg overflow-hidden shadow-xl">
         <div
           class="px-8 flex flex-col md:flex-row items-center justify-center md:justify-between py-8 bg-green-400"
         >
@@ -100,6 +100,16 @@ export default {
         };
       },
     },
+  },
+  mounted() {
+    gsap.from(".ld", {
+      duration: 1,
+      opacity: 0,
+      y: 30,
+      ease: "back",
+      stagger: 0.25,
+      repeat: -1,
+    });
   },
 };
 </script>
