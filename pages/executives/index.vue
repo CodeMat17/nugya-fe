@@ -42,8 +42,8 @@
               />
               <n-link
                 :to="{ name: 'executives-id', params: { id: executive.id } }"
-                class="absolute bottom-0 right-0 bg-green-200 m-2 p-2 rounded-md tracking-wide text-green-700"
-                >See details</n-link
+                class="absolute bottom-0 right-0 bg-blue-100 m-2 p-2 border-2 border-blue-500 rounded-full tracking-wider text-sm text-blue-500"
+                >Details</n-link
               >
             </div>
             <div class="px-4 py-2 font-semibold tracking-wide">
