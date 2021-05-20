@@ -49,7 +49,7 @@
               <div
                 class="mt-4 flex items-center justify-center md:justify-end space-x-12"
               >
-                <svg
+                <svg v-if="executive.phoneNo"
                   @click="phoneNo = !phoneNo"
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6 cursor-pointer text-blue-600 hover:opacity-75"
