@@ -49,7 +49,15 @@ export default {
         '@nuxtjs/pwa',
         '@nuxtjs/apollo',
         '@nuxtjs/dotenv',
+        '@nuxtjs/markdownit',
     ],
+
+    markdownit: {
+        preset: 'default',
+        linkify: true,
+        breaks: true,
+        injected: true,
+    },
 
     apollo: {
         clientConfigs: {

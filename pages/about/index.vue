@@ -7,18 +7,21 @@
         >
           NUGYA
         </div>
-        <p class="mt-2 text-gray-600 text-lg sm:text-xl md:text-2xl tracking-wide">
-          Nomeh Unateze General Youth Assembly is Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Cupiditate aperiam ratione harum
-          nesciunt expedita, rem corrupti, pariatur numquam placeat blanditiis
-          tempore maiores ullam eligendi. Repellendus deleniti placeat accusamus
-          quia itaque, exercitationem a magni incidunt perspiciatis quod, qui
-          quasi porro repudiandae.
+        <p
+          class="mt-2 text-gray-600 text-lg sm:text-xl md:text-2xl tracking-wide"
+        >
+          Nomeh Unateze General Youth Assembly is a platform for the unification
+          of Nomeh Unateze in General through the youths. It is the expectation
+          of the conveners, through this platform, to see the people of Nomeh
+          Unateze unite for real, and achieving human and infrastructural
+          developments.
         </p>
       </section>
       <section class="pt-8">
         <div>
-          <h1 class="bg-green-200 px-4 py-1 rounded-md text-xl md:text-2xl text-green-500 font-semibold tracking-widest">
+          <h1
+            class="bg-green-200 px-4 py-1 rounded-md text-xl md:text-2xl text-green-500 font-semibold tracking-widest"
+          >
             MOTTO:
           </h1>
           <div
@@ -30,7 +33,9 @@
       </section>
       <section class="pt-8">
         <div>
-          <h1 class="bg-green-200 px-4 py-1 rounded-md text-xl md:text-2xl text-green-500 font-semibold tracking-widest">
+          <h1
+            class="bg-green-200 px-4 py-1 rounded-md text-xl md:text-2xl text-green-500 font-semibold tracking-widest"
+          >
             MISSION STATEMENT:
           </h1>
           <div
@@ -42,7 +47,9 @@
       </section>
       <section class="pt-8">
         <div>
-          <h1 class="bg-green-200 px-4 py-1 rounded-md text-xl md:text-2xl text-green-500 font-semibold tracking-widest">
+          <h1
+            class="bg-green-200 px-4 py-1 rounded-md text-xl md:text-2xl text-green-500 font-semibold tracking-widest"
+          >
             OBJECTIVE:
           </h1>
           <div
@@ -71,5 +78,5 @@ export default {
       ],
     };
   },
-}
+};
 </script>

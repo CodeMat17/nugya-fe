@@ -15,10 +15,10 @@
         class="py-12 px-4 flex flex-col justify-center"
       >
         <div class="flex items-center justify-center space-x-4">
-          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-          <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
+          <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
+          <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
+          <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
+          <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
           </div>
           <div>
             <p class="font-semibold text-gray-700">Bio</p>
-            <p class="">{{ executive.bio }}</p>
+            <p v-if="executive.bio" id="editor" v-html="$md.render(executive.bio)"></p>
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@ export default {
     },
   },
   mounted() {
-    gsap.from(".ld", {
+    gsap.from(".loader", {
       duration: 1,
       opacity: 0,
       y: 30,
