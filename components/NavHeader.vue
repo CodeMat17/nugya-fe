@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-    <transition appear name="menuBox">
+    <transition appear name="menuBox" :duration="5000">
       <div
         v-show="showMenu"
         class="popMenu sm:hidden absolute right-0 mt-2 w-full h-auto flex justify-end px-4"

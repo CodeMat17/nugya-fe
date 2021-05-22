@@ -4,6 +4,7 @@ export const executivesQuery = gql `
 query executivesQuery {
     executives {
         id
+        slug
         post
         name
         image
@@ -12,9 +13,10 @@ query executivesQuery {
 `
 
 export const executiveQuery = gql `
-query executiveQuery($id: ID!) {
-    executive(id: $id) {
+query executiveQuery($slug: String!) {
+    executive(slug: $slug) {
         id
+        slug
         name
         image
         post

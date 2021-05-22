@@ -41,8 +41,8 @@
                 class="w-full h-64 object-cover object-top"
               />
               <n-link
-                :to="{ name: 'executives-id', params: { id: executive.id } }"
-                class="absolute bottom-0 right-0 bg-blue-100 m-2 p-2 border-2 border-blue-500 rounded-full tracking-wider text-sm text-blue-500"
+                :to="{ name: 'executives-id', params: { id: executive.slug } }"
+                class="absolute bottom-0 right-0 bg-blue-100 m-2 px-2 py-1 border-2 border-blue-500 rounded-full tracking-wider text-sm text-blue-500"
                 >Details</n-link
               >
             </div>
@@ -94,7 +94,7 @@ export default {
     gsap.from(".ld", {
       duration: 1.5,
       opacity: 0,
-      y: 30,
+      y: 10,
       ease: "back",
       stagger: 0.25,
       repeat: -1,

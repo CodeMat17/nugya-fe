@@ -36,22 +36,27 @@
           <span class="cursor text-red-500">_</span>
         </h1>
       </div>
-      <n-link
-        to="/about"
-        class="arrowBg block mt-24 md:mt-16 px-8 py-2 bg-gray-100 shadow-xl bg-opacity-25 rounded-lg"
-      >
+      <n-link to="/about" class="block mt-24 md:mt-16 px-8 py-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="arrow h-10 w-10 text-green-500"
+          class="play0 h-20 w-20 text-yellow-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
           <path
+            class="play2 animate-pulse"
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M13 5l7 7-7 7M5 5l7 7-7 7"
+            d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
+          />
+          <path
+            class="play1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
       </n-link>
@@ -74,7 +79,7 @@ export default {
       ],
     };
   },
-  layout: 'home',
+  layout: "home",
   data() {
     return {
       words: ["Okorobia Nomeh Unateze !", "Ofu Obi !!"],
@@ -139,18 +144,22 @@ export default {
 
     var arrowTl = gsap.timeline();
     arrowTl
-      .from(".arrowBg", {
+      .from(".play0", {
         duration: 1.5,
         opacity: 0,
         x: "-100%",
         delay: 3,
         ease: "back",
       })
-      .to(".arrow", {
+      .to(".play1", {
+        duration: 1,
+        scale: 1.8,
+        transformOrigin: "50%, 50%",
+      })
+      .to('.play2', {
         duration: 2,
-        opacity: 0,
-        x: 20,
-        repeat: -1,
+        rotation: 360,
+        ease: 'back'
       });
   },
 };

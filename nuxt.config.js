@@ -50,7 +50,12 @@ export default {
         '@nuxtjs/apollo',
         '@nuxtjs/dotenv',
         '@nuxtjs/markdownit',
+        '@nuxtjs/strapi',
     ],
+
+    strapi: {
+        entities: ['executives', 'executive']
+    },
 
     markdownit: {
         preset: 'default',
