@@ -27,6 +27,7 @@
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
+              <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
             </div>
           </div>
           <div class="text-center mt-2 md:mt-0 md:text-right">
@@ -89,11 +90,7 @@
         </div>
         <div class="p-4 tracking-wide sm:text-lg">
           <p class="font-semibold text-gray-700">Bio</p>
-          <p
-            v-if="executive.bio"
-      
-            v-html="$md.render(executive.bio)"
-          ></p>
+          <p v-if="executive.bio" v-html="$md.render(executive.bio)"></p>
         </div>
       </div>
     </div>
