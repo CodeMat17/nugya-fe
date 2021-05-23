@@ -39,27 +39,27 @@
         <div class="hidden sm:block space-x-2 text-gray-200 uppercase">
           <n-link
             to="/"
-            class="px-2 py-8 rounded-md hover:bg-green-100 hover:text-green-600"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >Home</n-link
           >
           <n-link
             to="/about"
-            class="px-2 py-8 rounded-md hover:bg-green-100 hover:text-green-600"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >About</n-link
           >
           <n-link
             to="/executives"
-            class="px-2 py-8 rounded-md hover:bg-green-100 hover:text-green-600"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >Executives</n-link
           >
           <n-link
             to="/events"
-            class="px-2 py-8 rounded-md hover:bg-green-100 hover:text-green-600"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >Events</n-link
           >
           <n-link
             to="/contact"
-            class="px-2 py-8 rounded-md hover:bg-green-100 hover:text-green-600"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >Contact Us</n-link
           >
         </div>
