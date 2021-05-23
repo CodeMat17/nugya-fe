@@ -90,6 +90,7 @@
         <div class="p-4 tracking-wide sm:text-lg">
           <p class="font-semibold text-gray-700">Bio</p>
           <p v-if="executive.bio" v-html="$md.render(executive.bio)"></p>
+          <p v-else>No biodata yet</p>
         </div>
       </div>
     </div>
