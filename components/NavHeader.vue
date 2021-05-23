@@ -103,7 +103,6 @@
         >
           Contact US
         </button>
-        <br />
         <div class="w-full text-center">
           <button @click="devButt">
             <svg
