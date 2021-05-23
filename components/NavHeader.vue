@@ -65,65 +65,65 @@
         </div>
       </div>
     </div>
-    <transition appear name="menuBox" :duration="5000">
+    <transition appear name="menuBox">
+    <div
+      v-show="showMenu"
+      class="popMenu sm:hidden absolute right-0 mt-2 w-full h-auto flex justify-end px-4"
+    >
       <div
-        v-show="showMenu"
-        class="popMenu sm:hidden absolute right-0 mt-2 w-full h-auto flex justify-end px-4"
+        class="space-y-4 text-green-600 bg-white shadow-2xl border py-2 rounded-xl"
       >
-        <div
-          class="space-y-4 text-green-600 bg-white shadow-2xl border py-2 rounded-xl"
+        <button
+          @click="homeButt"
+          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
         >
-          <button
-            @click="homeButt"
-            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-          >
-            Home
+          Home
+        </button>
+        <button
+          @click="aboutButt"
+          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+        >
+          About
+        </button>
+        <button
+          @click="executivesButt"
+          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+        >
+          Executives
+        </button>
+        <button
+          @click="eventsButt"
+          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+        >
+          Events
+        </button>
+        <button
+          @click="contactButt"
+          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+        >
+          Contact US
+        </button>
+        <br />
+        <div class="w-full text-center">
+          <button @click="devButt">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              />
+            </svg>
           </button>
-          <button
-            @click="aboutButt"
-            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-          >
-            About
-          </button>
-          <button
-            @click="executivesButt"
-            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-          >
-            Executives
-          </button>
-          <button
-            @click="eventsButt"
-            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-          >
-            Events
-          </button>
-          <button
-            @click="contactButt"
-            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-          >
-            Contact US
-          </button>
-          <br />
-          <div class="w-full text-center">
-            <button @click="devButt">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-blue-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
+    </div>
     </transition>
   </div>
 </template>
