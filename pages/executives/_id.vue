@@ -27,7 +27,6 @@
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
-              <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
             </div>
           </div>
           <div class="text-center mt-2 md:mt-0 md:text-right">
