@@ -46,7 +46,6 @@ export default {
     // Modules (https://go.nuxtjs.dev/config-modules)
     modules: [
         // https://go.nuxtjs.dev/pwa
-        '@nuxtjs/pwa',
         '@nuxtjs/apollo',
         '@nuxtjs/dotenv',
         '@nuxtjs/markdownit',
@@ -72,41 +71,41 @@ export default {
         }
     },
 
-    pwa: {
-        meta: {
-            title: 'NUGYA',
-            author: 'Matthew',
-        },
-        manifest: {
-            name: 'NUGYA',
-            short_name: 'NUGYA',
-            lang: 'en',
-            display: 'standalone',
-            background_color: '#000',
-            theme_color: '#5d635d',
-        },
-        workbox: {
-            runtimeCaching: [{
-                    urlPattern: 'https://fonts.googleapis.com/.*',
-                    handler: 'cacheFirst',
-                    method: 'GET',
-                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
-                },
-                {
-                    urlPattern: 'https://fonts.gstatic.com/.*',
-                    handler: 'cacheFirst',
-                    method: 'GET',
-                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
-                },
-                {
-                    urlPattern: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
-                    handler: 'cacheFirst',
-                    method: 'GET',
-                    strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
-                }
-            ]
-        }
-    },
+    // pwa: {
+    //     meta: {
+    //         title: 'NUGYA',
+    //         author: 'Matthew',
+    //     },
+    //     manifest: {
+    //         name: 'NUGYA',
+    //         short_name: 'NUGYA',
+    //         lang: 'en',
+    //         display: 'standalone',
+    //         background_color: '#000',
+    //         theme_color: '#5d635d',
+    //     },
+    //     workbox: {
+    //         runtimeCaching: [{
+    //                 urlPattern: 'https://fonts.googleapis.com/.*',
+    //                 handler: 'cacheFirst',
+    //                 method: 'GET',
+    //                 strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
+    //             },
+    //             {
+    //                 urlPattern: 'https://fonts.gstatic.com/.*',
+    //                 handler: 'cacheFirst',
+    //                 method: 'GET',
+    //                 strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
+    //             },
+    //             {
+    //                 urlPattern: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
+    //                 handler: 'cacheFirst',
+    //                 method: 'GET',
+    //                 strategyOptions: { cacheableResponse: { statuses: [0, 200] } },
+    //             }
+    //         ]
+    //     }
+    // },
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {}
