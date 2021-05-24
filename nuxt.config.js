@@ -53,6 +53,7 @@ export default {
     ],
 
     strapi: {
+        url: process.env.STRAPI_URL || "http://localhost:1337"
         entities: ['executives', 'executive']
     },
 
