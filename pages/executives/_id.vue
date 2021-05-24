@@ -22,7 +22,7 @@
                 class="rounded-full w-56 h-56 object-center object-cover"
               />
             </div>
-            <div v-else class="flex items-center justify-center space-x-4 py-6">
+            <div v-else class="flex items-center justify-center space-x-4 py-12">
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
               <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
@@ -119,7 +119,7 @@ export default {
     gsap.from(".loader", {
       duration: 2,
       opacity: 0,
-      y: 15,
+      y: 10,
       ease: "back",
       stagger: 0.25,
       repeat: -1,
