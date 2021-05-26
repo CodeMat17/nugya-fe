@@ -12,18 +12,11 @@ query executivesQuery {
 }
 `
 
-export const executiveQuery = gql `
-query executiveQuery($slug: String!) {
-    executive(slug: $slug) {
+export const usersQuery = gql `
+query usersQuery {
+    users {
         id
-        slug
-        name
-        image
-        post
-        mail
-        bio
-        phone
-        website
+        username
     }
 }
 `

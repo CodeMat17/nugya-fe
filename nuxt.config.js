@@ -50,11 +50,12 @@ export default {
         '@nuxtjs/dotenv',
         '@nuxtjs/markdownit',
         '@nuxtjs/strapi',
+        '@nuxtjs/toast',
     ],
 
     strapi: {
         url: process.env.STRAPI_URL || 'http://localhost:1337',
-        entities: ['executives', 'executive']
+        entities: ['executives', 'members', 'users']
     },
 
     markdownit: {

@@ -53,6 +53,11 @@
             >Executives</n-link
           >
           <n-link
+            to="/note"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
+            >Members</n-link
+          >
+          <n-link
             to="/events"
             class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >Events</n-link
@@ -66,63 +71,69 @@
       </div>
     </div>
     <transition appear name="menuBox">
-    <div
-      v-show="showMenu"
-      class="popMenu sm:hidden absolute right-0 mt-2 w-full h-auto flex justify-end px-4"
-    >
       <div
-        class="space-y-4 text-green-600 bg-white shadow-2xl border py-2 rounded-xl"
+        v-show="showMenu"
+        class="popMenu sm:hidden absolute right-0 mt-2 w-full h-auto flex justify-end px-4"
       >
-        <button
-          @click="homeButt"
-          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+        <div
+          class="space-y-4 text-green-600 bg-white shadow-2xl border py-2 rounded-xl"
         >
-          Home
-        </button>
-        <button
-          @click="aboutButt"
-          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-        >
-          About
-        </button>
-        <button
-          @click="executivesButt"
-          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-        >
-          Executives
-        </button>
-        <button
-          @click="eventsButt"
-          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-        >
-          Events
-        </button>
-        <button
-          @click="contactButt"
-          class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
-        >
-          Contact US
-        </button>
-        <div class="w-full text-center">
-          <button @click="devButt">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-              />
-            </svg>
+          <button
+            @click="homeButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+            Home
           </button>
+          <button
+            @click="aboutButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+            About
+          </button>
+          <button
+            @click="executivesButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+            Executives
+          </button>
+          <button
+            @click="membersButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+            Members
+          </button>
+          <button
+            @click="eventsButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+            Events
+          </button>
+          <button
+            @click="contactButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+            Contact US
+          </button>
+          <div class="w-full text-center">
+            <button @click="devButt">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-blue-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
     </transition>
   </div>
 </template>
@@ -144,6 +155,10 @@ export default {
     },
     executivesButt() {
       this.$router.push("/executives");
+      this.showMenu = false;
+    },
+    membersButt() {
+      this.$router.push("/note");
       this.showMenu = false;
     },
     eventsButt() {
