@@ -10,7 +10,7 @@
         <div>
           <n-link
             :to="{ name: 'members-id', params: { id: user.id } }"
-            class="block bg-gray-800 px-4 py-4 text-gray-200 text-lg tracking-wider rounded-md"
+            class="block bg-gray-800 px-4 py-4 text-gray-200 text-lg tracking-wider rounded-md uppercase"
           >
             {{ user.username }}
           </n-link>
