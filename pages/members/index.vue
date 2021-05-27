@@ -11,7 +11,7 @@
           name="username"
           id="username"
           v-model="query"
-          placeholder="Search name"
+          placeholder="Search name..."
           class="border w-full rounded-lg"
         />
       </div>
