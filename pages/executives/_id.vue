@@ -10,7 +10,8 @@
       >
         {{ error }}
       </div>
-      <div class="mt-8 bg-white rounded-lg overflow-hidden shadow-xl">
+      <Loader v-else-if="!executive"/>
+      <div v-else class="mt-8 bg-white rounded-lg overflow-hidden shadow-xl">
         <div
           class="px-8 flex flex-col md:flex-row items-center justify-center md:justify-between py-8 bg-green-400"
         >
@@ -22,12 +23,7 @@
                 class="rounded-full w-56 h-56 object-center object-cover"
               />
             </div>
-            <div v-else class="flex items-center justify-center space-x-4 py-12">
-              <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
-              <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
-              <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
-              <div class="loader w-3 h-3 bg-green-600 rounded-full"></div>
-            </div>
+            <Loader v-else/>
           </div>
           <div class="text-center mt-2 md:mt-0 md:text-right">
             <h1

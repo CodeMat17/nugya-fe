@@ -14,15 +14,7 @@
       >
         {{ error }}
       </div>
-      <div
-        v-else-if="$apollo.queries.executives.loading"
-        class="py-12 px-4 flex justify-center space-x-4"
-      >
-        <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-        <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-        <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-        <div class="ld w-3 h-3 bg-green-600 rounded-full"></div>
-      </div>
+      <Loader v-else-if="$apollo.queries.executives.loading"/>
 
       <div v-else class="sm:grid sm:grid-cols-2 md:grid-cols-3 sm:gap-4">
         <div

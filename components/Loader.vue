@@ -1,22 +1,28 @@
 <template>
-    <div class="flex justify-center space-x-4 py-8">
-            <div class="loader w-2 h-2 bg-green-500 rounded-full"></div>
-            <div class="loader w-2 h-2 bg-green-500 rounded-full"></div>
-            <div class="loader w-2 h-2 bg-green-500 rounded-full"></div>
-            <div class="loader w-2 h-2 bg-green-500 rounded-full"></div>
-        </div>
+  <div class="flex justify-center space-x-2 text-center text-lg font-semibold">
+    <p class="loadAnim">L</p>
+    <p class="loadAnim">o</p>
+    <p class="loadAnim">a</p>
+    <p class="loadAnim">d</p>
+    <p class="loadAnim">i</p>
+    <p class="loadAnim">n</p>
+    <p class="loadAnim">g</p>
+    <p class="loadAnim">.</p>
+    <p class="loadAnim">.</p>
+    <p class="loadAnim">.</p>
+  </div>
 </template>
 <script>
 export default {
-    mounted() {
-        gsap.from('.loader', {
-            duration: 1,
-            opacity: 0,
-            y: 10,
-            ease: 'back',
-            stagger: .25,
-            repeat: -1,
-        })
-    }
-}
+  mounted() {
+    gsap.from(".loadAnim", {
+      duration: 1,
+      opacity: 0,
+      y: 20,
+      ease: "back",
+      stagger: 0.25,
+      repeat: -1,
+    });
+  },
+};
 </script>

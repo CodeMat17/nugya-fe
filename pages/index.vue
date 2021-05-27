@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-800 w-full min-h-screen">
-    <div class="pb-20 pt-24 px-6 flex flex-col justify-center items-center">
+    <div class="pb-20 pt-20 px-6 flex flex-col justify-center items-center">
       <div class="md:flex md:items-center md:justify-between">
         <div
           class="flex justify-center logo md:w-auto order-first md:order-last"
@@ -36,7 +36,7 @@
           <span class="cursor text-red-500">_</span>
         </h1>
       </div>
-      <n-link to="/about" class="block mt-24 md:mt-16 px-8 py-2">
+      <n-link to="/about" class="block mt-20 md:mt-16 px-8 py-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="play0 h-20 w-20 text-yellow-500"

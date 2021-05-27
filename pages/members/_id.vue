@@ -5,7 +5,7 @@
       <div class="pt-12 flex justify-end px-4">
         <button
           @click="$router.back()"
-          class="focus:outline-none focus:shadow-outline hover:opacity-75 bg-green-500 rounded-full px-4 py-1 text-gray-200 tracking-wider"
+          class="shadow-xl focus:outline-none focus:shadow-outline hover:opacity-75 bg-green-500 rounded-full px-4 py-1 text-gray-200 tracking-wider"
         >
           Back
         </button>
