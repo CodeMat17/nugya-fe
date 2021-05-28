@@ -264,6 +264,20 @@
 </template>
 <script>
 export default {
+    name: 'Igbo-Calender',
+    head() {
+    return {
+      title: "Igbo-Calender",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Igbo-Calender",
+        },
+      ],
+    };
+  },
   data() {
     return {
       week: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
