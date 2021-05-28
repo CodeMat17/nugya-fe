@@ -63,6 +63,11 @@
             >Events</n-link
           >
           <n-link
+            to="/calender"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
+            >Igbo Calender</n-link
+          >
+          <n-link
             to="/contact"
             class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >Contact Us</n-link
@@ -107,6 +112,12 @@
             class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
           >
             Events
+          </button>
+          <button
+            @click="calenderButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+            Igbo Calender
           </button>
           <button
             @click="contactButt"
@@ -163,6 +174,10 @@ export default {
     },
     eventsButt() {
       this.$router.push("/events");
+      this.showMenu = false;
+    },
+     calenderButt() {
+      this.$router.push("/calender");
       this.showMenu = false;
     },
     contactButt() {

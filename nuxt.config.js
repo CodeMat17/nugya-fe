@@ -13,7 +13,7 @@ export default {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Nunito&display=swap" }
+            { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Calligraffitti&family=Nunito&display=swap" }
         ],
         script: [{
             src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"

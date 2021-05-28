@@ -53,4 +53,8 @@ html {
   transform: translateX(-100px);
   opacity: 0;
 }
+
+.calli-font {
+  font-family: 'Calligraffitti';
+}
 </style>

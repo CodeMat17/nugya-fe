@@ -38,6 +38,7 @@
 import Loader from "~/components/Loader.vue";
 import { usersQuery } from "~/graphql/query";
 export default {
+  middleware: 'authenticated',
   components: { Loader },
   data() {
     return {
