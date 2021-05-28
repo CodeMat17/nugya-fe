@@ -146,6 +146,20 @@
 </template>
 <script>
 export default {
+  name: 'Register',
+    head() {
+    return {
+      title: "Register",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Register",
+        },
+      ],
+    };
+  },
   data() {
     return {
       username: "",

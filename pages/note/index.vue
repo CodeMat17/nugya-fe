@@ -24,3 +24,21 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'Warning',
+    head() {
+    return {
+      title: "Warning",
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Warning",
+        },
+      ],
+    };
+  },
+}
+</script>
