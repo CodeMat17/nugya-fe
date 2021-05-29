@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center space-x-2 text-center text-lg font-semibold">
+  <div class="flex justify-center space-x-2 text-center text-lg font-semibold py-8">
     <p class="loadAnim">L</p>
     <p class="loadAnim">o</p>
     <p class="loadAnim">a</p>

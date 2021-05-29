@@ -10,62 +10,14 @@
         <div class="p-4">
           <form @submit.prevent="registerUser" class="space-y-4">
             <div>
-              <label>Name</label>
+              <label>Username</label>
               <input
                 type="text"
                 name="name"
                 id="name"
                 required
                 v-model="username"
-                placeholder="Your Name"
-                class="w-full border rounded-md shadow-lg"
-              />
-            </div>
-            <div>
-              <label>Family Name</label>
-              <input
-                type="text"
-                name="family"
-                id="family"
-                required
-                v-model="family"
-                placeholder="Your Family Name"
-                class="w-full border rounded-md shadow-lg"
-              />
-            </div>
-            <div>
-              <label>Village Name</label>
-              <input
-                type="text"
-                name="village"
-                id="village"
-                required
-                v-model="village"
-                placeholder="Your Village Name"
-                class="w-full border rounded-md shadow-lg"
-              />
-            </div>
-            <div>
-              <label>Occupation</label>
-              <input
-                type="text"
-                name="occupation"
-                id="occupation"
-                required
-                v-model="occupation"
-                placeholder="Your Occupation"
-                class="w-full border rounded-md shadow-lg"
-              />
-            </div>
-            <div>
-              <label>Phone No.</label>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                v-model="phone"
-                required
-                placeholder="Your Phone No."
+                placeholder="Your Username"
                 class="w-full border rounded-md shadow-lg"
               />
             </div>
@@ -128,12 +80,18 @@
                 <p>{{ registering ? "Please Wait..." : "REGISTER" }}</p>
               </div>
             </button>
-            <h1
+            <p
               v-if="error"
               class="p-4 rounded-lg text-center bg-red-500 text-gray-200 tracking-wider"
             >
               {{ error }}
-            </h1>
+            </p>
+            <p
+              v-if="passwordError"
+              class="p-4 rounded-lg text-center bg-red-500 text-gray-200 tracking-wider"
+            >
+              {{ passwordError }}
+            </p>
             <p class="text-sm">
               Already registered?
               <n-link to="/login" class="text-blue-500">Login here</n-link>
@@ -163,13 +121,9 @@ export default {
   data() {
     return {
       username: "",
-      family: "",
-      village: "",
-      phone: "",
       email: "",
       password: "",
       confirmPassword: "",
-      occupation: "",
       error: "",
       passwordError: "",
       registering: false,
@@ -179,28 +133,20 @@ export default {
     async registerUser() {
       this.registering = true;
       this.error = "";
-      if (this.confirmPassword === this.password) {
+      this.passwordError = "";
+      if (this.password === this.confirmPassword) {
         try {
           const newUser = await this.$strapi.register({
-            email: this.email,
-            family: this.family,
-            village: this.village,
-            occupation: this.occupation,
-            password: this.password,
             username: this.username,
-            phone: this.phone,
+            email: this.email,
+            password: this.password,            
             blocked: true,
           });
-          console.log(newUser);
           if (newUser !== null) {
             this.email = "";
-            this.family = "";
-            this.village = "";
-            this.occupation = "";
             this.password = "";
             this.confirmPassword = "";
             this.username = "";
-            this.phone = "";
             this.registering = false;
             this.$toasted.success(
               "We have received your details. Now contact the Admins for verification and unblocking.",
@@ -210,6 +156,7 @@ export default {
               }
             );
             this.error = "";
+             this.passwordError = "";
             this.$nuxt.$router.push("/login");
           }
         } catch (error) {
@@ -219,7 +166,7 @@ export default {
       } else {
         this.registering = false;
         this.passwordError =
-          "Your Confirm Password does not match your Password.";
+          "Your password does not match with your confirm password.";
       }
     },
   },

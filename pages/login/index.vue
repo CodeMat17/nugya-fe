@@ -108,7 +108,6 @@ export default {
           identifier: this.identifier,
           password: this.password,
         });
-        console.log(user);
         this.logIn = false;
         if (user !== null) {
           this.identifier = "";

@@ -12,11 +12,11 @@ query executivesQuery {
 }
 `
 
-export const usersQuery = gql `
-query usersQuery {
-    users {
+export const membersQuery = gql `
+query membersQuery {
+    members {
         id
-        username
+        name
     }
 }
 `
