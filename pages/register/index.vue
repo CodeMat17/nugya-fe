@@ -14,7 +14,7 @@
         <div class="p-4">
           <form @submit.prevent="createUser" class="space-y-4">
             <div>
-              <label>Full Name</label>
+              <label class="labelTag">Full Name</label>
               <input
                 type="text"
                 name="name"
@@ -22,11 +22,11 @@
                 required
                 v-model="name"
                 placeholder="Enter Your Full Name"
-                class="w-full border rounded-md shadow-lg"
+                class="inputTag w-full border rounded-md shadow-lg"
               />
             </div>
             <div>
-              <label>Email</label>
+              <label class="labelTag">Email</label>
               <input
                 type="email"
                 name="email"
@@ -34,11 +34,11 @@
                 v-model="email"
                 required
                 placeholder="Enter Your Email"
-                class="w-full border rounded-md shadow-lg"
+                class="inputTag w-full border rounded-md shadow-lg"
               />
             </div>
             <div>
-              <label>Phone No.</label>
+              <label class="labelTag">Phone No.</label>
               <input
                 type="tel"
                 name="phone"
@@ -46,11 +46,11 @@
                 required
                 v-model="phone"
                 placeholder="Enter Your Phone No."
-                class="w-full border rounded-md shadow-lg"
+                class="inputTag w-full border rounded-md shadow-lg"
               />
             </div>
             <div>
-              <label>Family Name</label>
+              <label class="labelTag">Family Name</label>
               <input
                 type="text"
                 name="family"
@@ -58,11 +58,11 @@
                 required
                 v-model="family"
                 placeholder="Enter Your Family Name"
-                class="w-full border rounded-md shadow-lg"
+                class="inputTag w-full border rounded-md shadow-lg"
               />
             </div>
             <div>
-              <label>Village Name</label>
+              <label class="labelTag">Village Name</label>
               <input
                 type="text"
                 name="village"
@@ -70,11 +70,11 @@
                 required
                 v-model="village"
                 placeholder="Enter Your Village Name"
-                class="w-full border rounded-md shadow-lg"
+                class="inputTag w-full border rounded-md shadow-lg"
               />
             </div>
             <div>
-              <label>Occupation</label>
+              <label class="labelTag">Occupation</label>
               <input
                 type="text"
                 name="occupation"
@@ -82,7 +82,7 @@
                 required
                 v-model="occupation"
                 placeholder="Enter Your Occupation"
-                class="w-full border rounded-md shadow-lg"
+                class="inputTag w-full border rounded-md shadow-lg"
               />
             </div>
             <br />
@@ -275,15 +275,12 @@ export default {
           village: this.village,
           occupation: this.occupation,
           show: false,
-        });        
+        });
         this.creating = false;
-        this.$toasted.success(
-          "PART 1 is done. Complete PART 2.",
-          {
-            position: "top-center",
-            duration: 9000,
-          }
-        );
+        this.$toasted.success("PART 1 is done. Now complete PART 2.", {
+          position: "top-center",
+          duration: 9000,
+        });
         this.part1 = false;
         this.part2 = true;
       } catch (error) {
@@ -333,6 +330,20 @@ export default {
       this.part2 = false;
       this.part1 = true;
     },
+  },
+  mounted() {
+    var formTag = gsap.timeline();
+    formTag
+      .from(".inputTag", {
+        duration: 2,
+        opacity: 0,
+        y: 200,
+        ease: "back",
+      })
+      .from(".labelTag", {
+        duration: 2,
+        opacity: 0,
+      });
   },
 };
 </script>
