@@ -277,7 +277,7 @@ export default {
           show: false,
         });        
         this.creating = false;
-        this.$toasted.show(
+        this.$toasted.success(
           "PART 1 is done. Complete PART 2.",
           {
             position: "top-center",
@@ -305,7 +305,7 @@ export default {
           });
           if (newUser !== null) {
             this.registering = false;
-            this.$toasted.show(
+            this.$toasted.success(
               "Registration done. Contact admin for verification and unblocking.",
               {
                 position: "top-center",
