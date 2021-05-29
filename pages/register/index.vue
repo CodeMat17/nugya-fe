@@ -1,11 +1,135 @@
 <template>
   <div class="w-full min-h-screen bg-green-100">
     <div class="max-w-md mx-auto px-4 py-8">
-      <div class="rounded-lg border overflow-hidden bg-white shadow-xl">
+      <!-- create -->
+      <div
+        v-if="part1"
+        class="rounded-lg border overflow-hidden bg-white shadow-xl"
+      >
         <h1
           class="px-4 py-6 bg-green-500 text-xl font-semibold text-gray-200 tracking-wider"
         >
-          REGISTER
+          PART 1 - Identification
+        </h1>
+        <div class="p-4">
+          <form @submit.prevent="createUser" class="space-y-4">
+            <div>
+              <label>Full Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                v-model="name"
+                placeholder="Enter Your Full Name"
+                class="w-full border rounded-md shadow-lg"
+              />
+            </div>
+            <div>
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                v-model="email"
+                required
+                placeholder="Enter Your Email"
+                class="w-full border rounded-md shadow-lg"
+              />
+            </div>
+            <div>
+              <label>Phone No.</label>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                required
+                v-model="phone"
+                placeholder="Enter Your Phone No."
+                class="w-full border rounded-md shadow-lg"
+              />
+            </div>
+            <div>
+              <label>Family Name</label>
+              <input
+                type="text"
+                name="family"
+                id="family"
+                required
+                v-model="family"
+                placeholder="Enter Your Family Name"
+                class="w-full border rounded-md shadow-lg"
+              />
+            </div>
+            <div>
+              <label>Village Name</label>
+              <input
+                type="text"
+                name="village"
+                id="village"
+                required
+                v-model="village"
+                placeholder="Enter Your Village Name"
+                class="w-full border rounded-md shadow-lg"
+              />
+            </div>
+            <div>
+              <label>Occupation</label>
+              <input
+                type="text"
+                name="occupation"
+                id="occupation"
+                required
+                v-model="occupation"
+                placeholder="Enter Your Occupation"
+                class="w-full border rounded-md shadow-lg"
+              />
+            </div>
+            <br />
+            <button
+              class="w-full tracking-wider font-semibold bg-green-500 py-3 rounded-md text-gray-200 focus:outline-none focus:shadow-outline"
+            >
+              <div class="flex items-center justify-center">
+                <svg
+                  v-if="creating"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 mr-4 animate-spin"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                <p>{{ creating ? "Please Wait..." : "IDENTIFY" }}</p>
+              </div>
+            </button>
+            <p
+              v-if="createError"
+              class="p-4 rounded-lg text-center bg-red-500 text-gray-200 tracking-wider"
+            >
+              {{ createError }}
+            </p>
+            <p class="text-sm">
+              Already registered?
+              <n-link to="/login" class="text-blue-500">Login here</n-link>
+            </p>
+          </form>
+        </div>
+      </div>
+      <!-- register -->
+      <div
+        v-if="part2"
+        class="rounded-lg border overflow-hidden bg-white shadow-xl"
+      >
+        <h1
+          class="px-4 py-6 bg-green-500 text-xl font-semibold text-gray-200 tracking-wider"
+        >
+          PART 2 - Registration
         </h1>
         <div class="p-4">
           <form @submit.prevent="registerUser" class="space-y-4">
@@ -93,8 +217,8 @@
               {{ passwordError }}
             </p>
             <p class="text-sm">
-              Already registered?
-              <n-link to="/login" class="text-blue-500">Login here</n-link>
+              Go back to
+              <button @click="partOne" class="text-blue-500">PART 1</button>
             </p>
           </form>
         </div>
@@ -104,8 +228,8 @@
 </template>
 <script>
 export default {
-  name: 'Register',
-    head() {
+  name: "Register",
+  head() {
     return {
       title: "Register",
       meta: [
@@ -125,11 +249,48 @@ export default {
       password: "",
       confirmPassword: "",
       error: "",
+      createError: "",
       passwordError: "",
+      name: "",
+      family: "",
+      phone: "",
+      village: "",
+      occupation: "",
       registering: false,
+      creating: false,
+      part1: true,
+      part2: false,
     };
   },
   methods: {
+    async createUser() {
+      this.creating = true;
+      this.createError = "";
+      try {
+        await this.$strapi.create("members", {
+          email: this.email,
+          phone: this.phone,
+          name: this.name,
+          family: this.family,
+          village: this.village,
+          occupation: this.occupation,
+          show: false,
+        });        
+        this.creating = false;
+        this.$toasted.show(
+          "PART 1 is done. Complete PART 2.",
+          {
+            position: "top-center",
+            duration: 9000,
+          }
+        );
+        this.part1 = false;
+        this.part2 = true;
+      } catch (error) {
+        this.creating = false;
+        this.createError = error;
+      }
+    },
     async registerUser() {
       this.registering = true;
       this.error = "";
@@ -139,24 +300,22 @@ export default {
           const newUser = await this.$strapi.register({
             username: this.username,
             email: this.email,
-            password: this.password,            
+            password: this.password,
             blocked: true,
           });
           if (newUser !== null) {
-            this.email = "";
-            this.password = "";
-            this.confirmPassword = "";
-            this.username = "";
             this.registering = false;
-            this.$toasted.success(
-              "We have received your details. Now contact the Admins for verification and unblocking.",
+            this.$toasted.show(
+              "Registration done. Contact admin for verification and unblocking.",
               {
                 position: "top-center",
-                duration: 5000,
+                duration: 9000,
               }
             );
             this.error = "";
-             this.passwordError = "";
+            this.passwordError = "";
+            // this.part1 = false;
+            // this.part2 = true;
             this.$nuxt.$router.push("/login");
           }
         } catch (error) {
@@ -168,6 +327,11 @@ export default {
         this.passwordError =
           "Your password does not match with your confirm password.";
       }
+    },
+
+    partOne() {
+      this.part2 = false;
+      this.part1 = true;
     },
   },
 };

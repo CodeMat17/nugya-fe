@@ -17,6 +17,7 @@ query membersQuery {
     members {
         id
         name
+        show
     }
 }
 `

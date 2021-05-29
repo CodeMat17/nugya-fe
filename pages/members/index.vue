@@ -7,7 +7,7 @@
           Welcome, {{ $strapi.user.username }}
         </p>
         <h1 class="font-semibold text-xl tracking-widest">
-          Verified Members ({{ membersCount }})
+          Verified Members
         </h1>
       </div>
 
@@ -30,7 +30,7 @@
         :key="member.id"
         class="mt-3 relative"
       >
-        <n-link
+        <n-link v-if="member.show"
           :to="{ name: 'members-id', params: { id: member.id } }"
           class="block bg-gray-800 px-4 py-4 text-gray-200 sm:text-lg tracking-wider rounded-md uppercase"
         >
@@ -82,11 +82,6 @@ export default {
         return member.name.toLowerCase().includes(this.query.toLowerCase());
       });
     },
-  },
-  async asyncData({ $strapi }) {
-    const membersCount = await $strapi.$members.count();
-    console.log('count: ', membersCount)
-    return { membersCount };
   },
 };
 </script>
