@@ -3,12 +3,13 @@
     <Logout class="fixed" />
     <div class="px-4 pt-2 pb-8 max-w-lg mx-auto">
       <div class="pt-12 pb-6">
-        <p v-if="$strapi.user" class="text-blue-500 calli-font font-semibold tracking-wide">
+        <p
+          v-if="$strapi.user"
+          class="text-blue-500 calli-font font-semibold tracking-wide"
+        >
           Welcome, {{ $strapi.user.username }}
         </p>
-        <h1 class="font-semibold text-xl tracking-widest">
-          Verified Members
-        </h1>
+        <h1 class="font-semibold text-xl tracking-widest">Verified Members</h1>
       </div>
 
       <div class="flex justify-center w-md mx-6">
@@ -30,11 +31,30 @@
         :key="member.id"
         class="mt-3 relative"
       >
-        <n-link v-if="member.show"
+        <n-link
+          v-if="member.show"
           :to="{ name: 'members-id', params: { id: member.id } }"
-          class="block bg-gray-800 px-4 py-4 text-gray-200 sm:text-lg tracking-wider rounded-md uppercase"
+          class="block bg-gray-800 p-4 text-gray-200 tracking-wider rounded-md uppercase"
         >
-          {{ member.name }}
+          <div class="flex items-center justify-between">
+            <p class="text-sm sm:text-lg truncate">
+              {{ member.name }}
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
         </n-link>
       </div>
     </div>

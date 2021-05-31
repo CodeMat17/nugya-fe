@@ -140,7 +140,8 @@
                 name="name"
                 id="name"
                 required
-                v-model="username"
+                v-model="name"
+                disabled
                 placeholder="Your Username"
                 class="w-full border rounded-md shadow-lg"
               />
@@ -152,6 +153,7 @@
                 name="email"
                 id="email"
                 v-model="email"
+                disabled
                 required
                 placeholder="Your Email"
                 class="w-full border rounded-lg shadow-xl"
@@ -295,7 +297,7 @@ export default {
       if (this.password === this.confirmPassword) {
         try {
           const newUser = await this.$strapi.register({
-            username: this.username,
+            username: this.name,
             email: this.email,
             password: this.password,
             blocked: true,
