@@ -21,3 +21,13 @@ query membersQuery {
     }
 }
 `
+
+export const usersQuery = gql `
+query usersQuery {
+    users {
+        id
+        username
+        blocked
+    }
+}
+`

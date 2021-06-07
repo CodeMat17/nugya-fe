@@ -72,6 +72,11 @@
             class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
             >Contact Us</n-link
           >
+           <n-link
+            to="/admin-login"
+            class="px-2 py-5 hover:bg-green-100 hover:text-green-600"
+            >Admin</n-link
+          >
         </div>
       </div>
     </div>
@@ -124,6 +129,12 @@
             class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
           >
             Contact US
+          </button>
+          <button
+            @click="adminButt"
+            class="butts w-full text-left px-4 py-2 block focus:outline-none focus:bg-green-100 hover:bg-green-100 uppercase tracking-wider font-semibold"
+          >
+        Admin
           </button>
           <div class="w-full text-center">
             <button @click="devButt">
@@ -182,6 +193,10 @@ export default {
     },
     contactButt() {
       this.$router.push("/contact");
+      this.showMenu = false;
+    },
+     adminButt() {
+      this.$router.push("/admin-login");
       this.showMenu = false;
     },
     devButt() {

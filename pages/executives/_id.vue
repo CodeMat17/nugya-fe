@@ -10,7 +10,7 @@
       >
         {{ error }}
       </div>
-      <Loader v-else-if="!executive"/>
+      <Loader v-else-if="!executive" />
       <div v-else class="mt-8 bg-white rounded-lg overflow-hidden shadow-xl">
         <div
           class="px-8 flex flex-col md:flex-row items-center justify-center md:justify-between py-8 bg-green-400"
@@ -23,7 +23,7 @@
                 class="rounded-full w-56 h-56 object-center object-cover"
               />
             </div>
-            <Loader v-else/>
+            <Loader v-else />
           </div>
           <div class="text-center mt-2 md:mt-0 md:text-right">
             <h1
