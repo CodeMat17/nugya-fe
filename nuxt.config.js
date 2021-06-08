@@ -67,10 +67,6 @@ export default {
             theme_color: '#000',
             background_color: '#000',
         },
-        icon: {
-            source: '/static/icon.png',
-            fileName: 'icon.png',
-        },
         workbox: {
             runtimeCaching: [{
                     urlPattern: 'https://fonts.googleapis.com/.*',
