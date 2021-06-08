@@ -51,7 +51,7 @@
           </svg>
         </div>
         <h1 class="text-lg py-2 text-center tracking-wide">
-          {{ member.name }}
+          {{ member.name}}
         </h1>
         <div class="flex justify-end mt-4">
           <button
