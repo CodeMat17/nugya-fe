@@ -64,8 +64,7 @@ export default {
             short_name: 'NUGYA',
             lang: 'en',
             display: 'standalone',
-            theme_color: '#000',
-            background_color: '#000',
+            theme_color: '#ffffff',
         },
         workbox: {
             runtimeCaching: [{
