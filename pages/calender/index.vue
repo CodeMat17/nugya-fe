@@ -4,7 +4,7 @@
       <h1
         class="calli-font font-semibold text-xl tracking-wider text-gray-800 block text-center"
       >
-        IGBO CALENDER 2021
+        IGBO CALENDER 2021.
       </h1>
       <div class="py-4 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-2">
         <div class="border px-2 py-4 mt-2 rounded-lg bg-white shadow-xl">
